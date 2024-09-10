@@ -1,4 +1,6 @@
+# LaTeX compilation
 *.aux
 *.log
 *.out
 *.synctex.gz
+*.synctex(busy)

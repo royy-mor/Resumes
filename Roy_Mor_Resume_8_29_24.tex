@@ -102,8 +102,8 @@
 
 \newboolean{compArch}
 \newboolean{compiler}
-\setboolean{compArch}{true}
-\setboolean{compiler}{false}
+\setboolean{compArch}{false}
+\setboolean{compiler}{true}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,10 +123,10 @@
 \section{Objective}
 \begin{center}
   \ifthenelse{\boolean{compArch}}{
-    \textit{Senior Eachelors/Integrated Masters ECE Student currently benchmarking Gem5 and starting architectural design research seeking a position in Computer Architecture Design or Verification}
+    \textit{Senior Bachelors/Integrated Masters ECE Student currently benchmarking Gem5 and starting architectural design research seeking a position in Computer Architecture Design or Verification}
   }{}
   \ifthenelse{\boolean{compiler}}{
-    \textit{Senior Eachelors/Integrated Masters ECE Student with experience in LLVM Compiler Implementation seeking a position in Compiler Development}
+    \textit{Senior Bachelors/Integrated Masters ECE Student with experience in LLVM Compiler and Optimization Pass Implementation seeking a position in Compiler Development}
   }{}
 \end{center}
 
@@ -144,22 +144,33 @@
 
   \resumeSubHeadingListEnd
 
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, Java, Python, Verilog, SQL (Postgres), JavaScript, QML} \\
+     \textbf{Frameworks}{: LLVM, Flask, Angular} \\
+     \textbf{Developer Tools}{: Git, Docker, VS Code, Microsoft Azure Suite, Vivado, Keil, PostgreSQL, Milvus, Mbed Studio} \\
+    }}
+ \end{itemize}
+
 
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
-      \resumeProjectHeading
-        {\textbf{5-Stage Pipelined Processor} $|$ \emph{C}}{Dec 2023}
-        \resumeItemListStart
-          \resumeItem{Implemented a 5-stage pipelined version of the LC-3b processor, simulated in C, capable of performing all LC3 assembly operations}
-        \resumeItemListEnd 
-
       \resumeProjectHeading
         {\textbf{COOL Compiler} $|$ \emph{C++, LLVM}}{March 2024}
         \resumeItemListStart
           \resumeItem{Wrote a compiler with the LLVM Framework for minimal, object-oriented language: COOL}
           \resumeItem{Implemented intermediate representation backedge and loop detection, as well as Loop Invariant Code Motion optimization}
         \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\textbf{5-Stage Pipelined Processor} $|$ \emph{C}}{Dec 2023}
+        \resumeItemListStart
+          \resumeItem{Implemented a 5-stage pipelined version of a 16-bit CPU in C capable of performing all ISA instructions}
+          \resumeItem{Simulated variable-cycle length memory instructions and branch instructions causing pipeline stalls}
+      \resumeItemListEnd 
       
       \resumeProjectHeading
         {\textbf{RTL Stopwatch for FPGA} $|$ \emph{Verilog}}{Dec 2022}
@@ -170,8 +181,8 @@
       \resumeProjectHeading
         {\textbf{Solar Array Simulator} $|$ \emph{Python, C, QML, Angular}}{September 2022 -- Present}
         \resumeItemListStart
-          \resumeItem{Created a QML frontend that graphed incoming data from a characterizing PCB in real time}
-          \resumeItem{Developed serial communications between the Simulator and Curve Tracer PCB for custom testing configurations}
+          \resumeItem{Created both QML and Angular front-ends that graphed incoming data from a characterizing PCB in real time}
+          \resumeItem{Developed serial communications between the simulator and characterizing PCB for custom testing configurations}
           \resumeItem{Integrated characterization data for multiple cells with a clustering algorithm that determined and displayed matching cells}
         \resumeItemListEnd
     \resumeSubHeadingListEnd
@@ -186,18 +197,17 @@
       {Amdocs}{Plano, TX}
       \resumeItemListStart
         \resumeItem{Developed a Retrieval Augmented Generation chatbot to improve employee workflow and provide rapid responses regarding proprietary products}
-        \resumeItem{Maintained a Milvus VectorDB to store embeddings of ingested documents and a PostgreSQL DB containing chat histories}
+        \resumeItem{Maintained a Milvus VectorDB to store embeddings of ingested documents and a PostgreSQL DB containing user and chat data}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Power Generation Member/Lead}{August 2021/2023 -- Present/July 2024}
+      {Power Generation Lead}{August 2021 -- Present}
       {Longhorn Racing Solar}{Austin, TX}
       \resumeItemListStart
         \resumeItem{Organized a 14-person team to manufacture solar panels, create embedded devices for power electronics and telemetry, and write simulators for photovoltaic performance}
         \resumeItem{Communicated with members to hit intra- and inter-system deadlines while maintaining safety and efficiency standards}
         \resumeItem{Developed a new solar simulator to improve accessibility and utility for photovoltaic characterization and assembly}
         \resumeItem{Characterized and validated power electronics hardware for a boost converter/Maximum Power Point Tracker}
-        \resumeItem{Soldered and laminated solar cells into complete modules}
     \resumeItemListEnd
 
     \resumeSubheading
@@ -210,24 +220,5 @@
   \resumeSubHeadingListEnd
 
 
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: C/C++, Java, Python, Verilog, SQL (Postgres), JavaScript, QML} \\
-     \textbf{Frameworks}{: LLVM, Flask, Angular} \\
-     \textbf{Developer Tools}{: Git, Docker, VS Code, Microsoft Azure Suite, Vivado, Keil, PostgreSQL, Milvus, Mbed Studio} \\
-    }}
- \end{itemize}
-
-
 %-------------------------------------------
 \end{document}
-About
-About us
-Our values
-Careers
-Press & awards
-Blog
-L
