@@ -1,0 +1,233 @@
+%-------------------------
+% Resume in Latex
+% Author : Roy Mor
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{ifthen}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newboolean{compArch}
+\newboolean{compiler}
+\setboolean{compArch}{true}
+\setboolean{compiler}{false}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%------------HEADING------------
+\begin{center}
+  \textbf{\Huge \scshape Roy Mor} \\ \vspace{1pt}
+  \small (214) 984-4337 $|$ \href{mailto:x@x.com}{\underline{roymor.102@gmail.com}} $|$ 
+  \href{https://linkedin.com/in/royy-mor/}{\underline{linkedin.com/in/royy-mor}} $|$
+  \href{https://github.com/royy-mor}{\underline{github.com/royy-mor}}
+\end{center}
+
+
+\section{Objective}
+\begin{center}
+  \ifthenelse{\boolean{compArch}}{
+    \textit{Senior Eachelors/Integrated Masters ECE Student currently benchmarking Gem5 and starting architectural design research seeking a position in Computer Architecture Design or Verification}
+  }{}
+  \ifthenelse{\boolean{compiler}}{
+    \textit{Senior Eachelors/Integrated Masters ECE Student with experience in LLVM Compiler Implementation seeking a position in Compiler Development}
+  }{}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The University of Texas at Austin}{Austin, TX}
+      {B.S./M.S. Electrical and Computer Engineering}{May 2025/2026}
+      \resumeItemListStart
+        \resumeItem{Overall GPA: 3.8}
+        \resumeItem{Relevant Coursework: Computer Architecture, ML/HW Codesign, Compilers, Digital Logic Design, Embedded Systems, Software Design II, Linear Algebra, Algorithms}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\textbf{5-Stage Pipelined Processor} $|$ \emph{C}}{Dec 2023}
+        \resumeItemListStart
+          \resumeItem{Implemented a 5-stage pipelined version of the LC-3b processor, simulated in C, capable of performing all LC3 assembly operations}
+        \resumeItemListEnd 
+
+      \resumeProjectHeading
+        {\textbf{COOL Compiler} $|$ \emph{C++, LLVM}}{March 2024}
+        \resumeItemListStart
+          \resumeItem{Wrote a compiler with the LLVM Framework for minimal, object-oriented language: COOL}
+          \resumeItem{Implemented intermediate representation backedge and loop detection, as well as Loop Invariant Code Motion optimization}
+        \resumeItemListEnd
+      
+      \resumeProjectHeading
+        {\textbf{RTL Stopwatch for FPGA} $|$ \emph{Verilog}}{Dec 2022}
+        \resumeItemListStart
+          \resumeItem{Developed a programmable 4-digit stopwatch in Verilog and Vivado for an FPGA board}
+        \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\textbf{Solar Array Simulator} $|$ \emph{Python, C, QML, Angular}}{September 2022 -- Present}
+        \resumeItemListStart
+          \resumeItem{Created a QML frontend that graphed incoming data from a characterizing PCB in real time}
+          \resumeItem{Developed serial communications between the Simulator and Curve Tracer PCB for custom testing configurations}
+          \resumeItem{Integrated characterization data for multiple cells with a clustering algorithm that determined and displayed matching cells}
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Software Engineering Intern}{May 2024 -- Aug 2024}
+      {Amdocs}{Plano, TX}
+      \resumeItemListStart
+        \resumeItem{Developed a Retrieval Augmented Generation chatbot to improve employee workflow and provide rapid responses regarding proprietary products}
+        \resumeItem{Maintained a Milvus VectorDB to store embeddings of ingested documents and a PostgreSQL DB containing chat histories}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Power Generation Member/Lead}{August 2021/2023 -- Present/July 2024}
+      {Longhorn Racing Solar}{Austin, TX}
+      \resumeItemListStart
+        \resumeItem{Organized a 14-person team to manufacture solar panels, create embedded devices for power electronics and telemetry, and write simulators for photovoltaic performance}
+        \resumeItem{Communicated with members to hit intra- and inter-system deadlines while maintaining safety and efficiency standards}
+        \resumeItem{Developed a new solar simulator to improve accessibility and utility for photovoltaic characterization and assembly}
+        \resumeItem{Characterized and validated power electronics hardware for a boost converter/Maximum Power Point Tracker}
+        \resumeItem{Soldered and laminated solar cells into complete modules}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Teaching Assistant for Software Design II}{August 2023 -- May 2024}
+      {UT Austin}{Austin, TX}
+      \resumeItemListStart
+        \resumeItem{Provided office hours and recitations for students, teaching concepts such as object-oriented design, inheritance, and polymorphism}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, Java, Python, Verilog, SQL (Postgres), JavaScript, QML} \\
+     \textbf{Frameworks}{: LLVM, Flask, Angular} \\
+     \textbf{Developer Tools}{: Git, Docker, VS Code, Microsoft Azure Suite, Vivado, Keil, PostgreSQL, Milvus, Mbed Studio} \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
+About
+About us
+Our values
+Careers
+Press & awards
+Blog
+L
