@@ -103,7 +103,7 @@
 \newboolean{compArch}
 \newboolean{compiler}
 \setboolean{compArch}{false}
-\setboolean{compiler}{true}
+\setboolean{compiler}{false}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -119,16 +119,17 @@
   \href{https://github.com/royy-mor}{\underline{github.com/royy-mor}}
 \end{center}
 
-
-\section{Objective}
-\begin{center}
-  \ifthenelse{\boolean{compArch}}{
-    \textit{Senior Bachelors/Integrated Masters ECE Student currently benchmarking Gem5 and starting architectural design research seeking a position in Computer Architecture Design or Verification}
-  }{}
-  \ifthenelse{\boolean{compiler}}{
-    \textit{Senior Bachelors/Integrated Masters ECE Student with experience in LLVM Compiler and Optimization Pass Implementation seeking a position in Compiler Development}
-  }{}
-\end{center}
+\ifthenelse{\boolean{compArch} \OR \boolean{compiler}}{
+  \section{Objective}
+  \begin{center}
+    \ifthenelse{\boolean{compArch}}{
+      \textit{Senior Bachelors/Integrated Masters ECE Student currently benchmarking Gem5 and starting architectural design research seeking a position in Computer Architecture Design or Verification}
+    }{}
+    \ifthenelse{\boolean{compiler}}{
+      \textit{Senior Bachelors/Integrated Masters ECE Student with experience in LLVM Compiler and Optimization Pass Implementation seeking a position in Compiler Development}
+    }{}
+  \end{center}
+}{}
 
 
 %-----------EDUCATION-----------
@@ -158,20 +159,38 @@
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
+      
+    \ifthenelse{\boolean{compArch}}{
+      \resumeProjectHeading
+        {\textbf{5-Stage Pipelined Processor} $|$ \emph{C}}{Dec 2023}
+        \resumeItemListStart
+          \resumeItem{Implemented a 5-stage pipelined version of a 16-bit CPU in C capable of performing all ISA instructions}
+          \resumeItem{Simulated variable-cycle length memory instructions and branch instructions causing pipeline stalls}
+        \resumeItemListEnd
       \resumeProjectHeading
         {\textbf{COOL Compiler} $|$ \emph{C++, LLVM}}{March 2024}
         \resumeItemListStart
           \resumeItem{Wrote a compiler with the LLVM Framework for minimal, object-oriented language: COOL}
           \resumeItem{Implemented intermediate representation backedge and loop detection, as well as Loop Invariant Code Motion optimization}
         \resumeItemListEnd
-
+    }{
+      \resumeProjectHeading
+        {\textbf{COOL Compiler} $|$ \emph{C++, LLVM}}{March 2024}
+        \resumeItemListStart
+          \resumeItem{Wrote a compiler with the LLVM Framework for minimal, object-oriented language: COOL}
+          \resumeItem{Implemented intermediate representation backedge and loop detection, as well as Loop Invariant Code Motion optimization}
+        \resumeItemListEnd
       \resumeProjectHeading
         {\textbf{5-Stage Pipelined Processor} $|$ \emph{C}}{Dec 2023}
         \resumeItemListStart
           \resumeItem{Implemented a 5-stage pipelined version of a 16-bit CPU in C capable of performing all ISA instructions}
           \resumeItem{Simulated variable-cycle length memory instructions and branch instructions causing pipeline stalls}
-      \resumeItemListEnd 
-      
+        \resumeItemListEnd
+    }
+
+
+
+
       \resumeProjectHeading
         {\textbf{RTL Stopwatch for FPGA} $|$ \emph{Verilog}}{Dec 2022}
         \resumeItemListStart
@@ -204,11 +223,11 @@
       {Power Generation Lead}{August 2021 -- Present}
       {Longhorn Racing Solar}{Austin, TX}
       \resumeItemListStart
+        \resumeItem{Characterized, wrote firmware for a boost converter/Maximum Power Point Tracker, debugged switching node transient voltage spikes and implemented hardware protection and firmware optimizations to handle them}
         \resumeItem{Organized a 14-person team to manufacture solar panels, create embedded devices for power electronics and telemetry, and write simulators for photovoltaic performance}
-        \resumeItem{Communicated with members to hit intra- and inter-system deadlines while maintaining safety and efficiency standards}
+        \resumeItem{Communicated with members to hit intra/intersystem deadlines while maintaining safety and efficiency standards}
         \resumeItem{Developed a new solar simulator to improve accessibility and utility for photovoltaic characterization and assembly}
-        \resumeItem{Characterized and validated power electronics hardware for a boost converter/Maximum Power Point Tracker}
-    \resumeItemListEnd
+      \resumeItemListEnd
 
     \resumeSubheading
       {Teaching Assistant for Software Design II}{August 2023 -- May 2024}
